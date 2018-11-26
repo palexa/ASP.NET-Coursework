@@ -1,0 +1,22 @@
+﻿@{
+    ViewBag.Title = "Фотографии";
+}
+
+<style>
+   a > img{
+        max-height: 200px;
+        max-width: 260px;
+        min-height: 160px;
+        min-width: 100px;
+        float: none;
+        margin: 0 0 40px 0;
+    }
+</style>
+
+<h2>Search by tag @TempData["TagName"]</h2>
+
+<hr />
+
+<div id="gallery">
+    @{Html.RenderAction("GetPhotosByTag", new { tagName = @TempData["TagName"] });}
+</div>

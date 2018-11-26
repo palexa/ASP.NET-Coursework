@@ -1,0 +1,20 @@
+﻿@model IEnumerable<string>
+    
+@{
+    ViewBag.Title = "Home";
+}
+
+<div id="gallery" class="page">
+    <div class="tags-bare">
+        <h2>Tags</h2>
+        <div style="line-height: 2.5;">
+            @foreach (var tagName in Model)
+            {
+                <a href=@Url.Action("ShowPhotoByTag", "Photo", new { tagName = tagName}) class="badge">@tagName</a>
+            }
+        </div>
+    </div>
+    <div class="users-bar">
+        @{Html.RenderAction("GetUsersName");}
+    </div>
+</div>

@@ -1,0 +1,39 @@
+﻿@model PhotoAlbum.Models.PageData<string>
+
+@{
+    ViewBag.Title = "Альбомы";
+}
+<style>
+
+</style>
+
+<div style="display: block; padding: 1.5%;">
+    <a href="/Album/Create" class="knopka">Create a new album</a>
+</div>
+
+<div id="gallery">
+   <div style="text-align:center;">
+       <ul>
+           @foreach (var albumName in Model.Content)
+           {
+               <li style="display:inline-block;">
+                   <figure class="fig">
+                       <img src="~/Content/81c2eda06d21.jpg" title="Открыть @albumName" width="132" height="120">
+                       <figcaption>
+                           @albumName
+                       </figcaption>
+                       <a href="@Url.Action("EditAlbum", "Album", new { albumName = @albumName })">Edit</a> |
+                       <a href="@Url.Action("Delete", "Album", new { albumName = @albumName })">Delete</a>
+                   </figure>
+               </li>
+           }
+       </ul>
+   </div>
+
+    <div>
+        @if (Model.CountPage > 1)
+        {
+            @Html.PageLinks(Model.NumberPage, Model.CountPage, x => Url.Action("EditAlbums", "Album", new { page = x }))
+        }
+    </div>
+</div>

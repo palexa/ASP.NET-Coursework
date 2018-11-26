@@ -1,0 +1,25 @@
+﻿@model IEnumerable<string>
+
+@{
+    ViewBag.Title = "Добавленеие тегов";
+}
+
+<div>
+    @using (Ajax.BeginForm("TagAdd","Photo", new { idPhoto = @ViewBag.Id }, new AjaxOptions { UpdateTargetId = "results", LoadingElementId = "loading"}))
+    {
+        <input type="text" name="nameTag" />
+        <input type="submit" value="Добавить" />
+    }
+    <div id="loading" style="display:none; text-align:center">
+        <img src="~/Content/loader_orange.gif" width="48px">
+    </div>
+    <div id="results">
+            <h3>Все тиги фотографии:</h3>
+            <ul>
+                @foreach (var item in Model)
+                {
+                    <li>@item</li>
+                }
+            </ul>
+    </div>
+</div>
