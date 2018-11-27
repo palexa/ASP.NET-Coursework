@@ -12,7 +12,7 @@
     @using (Html.BeginForm("RenameUser", "Account", new { albumName = ViewBag.AlbumName }, FormMethod.Post))
     {
         <p>Enter a new login: @Html.TextBox("newLogin", "")</p>
-        <p><input type="submit" value="Change" /></p>
+        <p><input class="btn btn-dark" type="submit" value="Change" /></p>
     }
 </fieldset>
 
@@ -26,7 +26,7 @@
     @using (Html.BeginForm("RenameAlbum", "Album", new { albumName = ViewBag.AlbumName }, FormMethod.Post))
     {
         <p>Enter your new email: @Html.TextBox("newAlbumName", "")</p>
-        <p><input type="submit" value="Change" /></p>
+        <p><input type="submit" class="btn btn-dark" value="Change" /></p>
     }
 </fieldset>
 
@@ -43,6 +43,6 @@
         @Html.TextBox("newAlbumName", "")</p>
         <p>Enter new password:
         @Html.TextBox("newAlbumName", "")</p>
-        <input type="submit" value="Change" />
+        <input type="submit" class="btn btn-dark" value="Change" />
     }
 </fieldset>
