@@ -10,7 +10,7 @@
         <div style="line-height: 2.5;">
             @foreach (var tagName in Model)
             {
-                <a href=@Url.Action("ShowPhotoByTag", "Photo", new { tagName = tagName}) class="badge">@tagName</a>
+                <a href=@Url.Action("ShowPhotoByTag", "Photo", new { tagName = tagName}) class="waves-effect waves-light btn">@tagName</a>
             }
         </div>
     </div>

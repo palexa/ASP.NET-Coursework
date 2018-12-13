@@ -7,7 +7,7 @@
 @if (@ViewBag.UserName == User.Identity.Name)
 {
     <div style="display: block; padding: 14px;">
-        <a href="/Album/EditAlbums" class="knopka">Edit albums</a>
+        <a href="/Album/EditAlbums" class="btn-floating btn-large waves-effect waves-light red"><i class="material-icons">edit</i></a>
     </div>
 }
 
@@ -20,7 +20,7 @@
                 <li style="display:inline-block;">
                     <a href="@Url.Action("ShowPhotos", "Photo", new {userName = @ViewBag.UserName,  albumName = @albumName })" style="text-decoration:none;">
                         <figure class="fig">
-                            <img src="~/Content/81c2eda06d21.jpg" title="Открыть @albumName" width="132" height="120">
+                            <img src="~/Content/album.png" title="Открыть @albumName" width="132" height="120">
                             <figcaption>
                                 @albumName
                             </figcaption>

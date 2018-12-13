@@ -16,9 +16,9 @@ namespace PhotoAlbum.HtmlHelpers
             for(int i = 1; i <= 5; i++)
             {
                 if(i == value)
-                    result.Append($"<button class=\"selected\" name=\"rating\" value={i}>{i}</button>");
+                    result.Append($"<button class=\"selected btn btn-dark\" name=\"rating\" value={i}>{i}</button>");
                 else
-                    result.Append($"<button name=\"rating\" value={i}>{i}</button>");
+                    result.Append($"<button class=\"btn btn-dark\" name=\"rating\" value={i}>{i}</button>");
             }
 
             return MvcHtmlString.Create(result.ToString());
