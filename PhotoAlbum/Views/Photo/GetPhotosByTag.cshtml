@@ -39,7 +39,7 @@
                         Теги:
                         @foreach (var tagName in photo.TagName)
                         {
-                            <a href="@Url.Action("ShowPhotoByTag", "Photo", new { tagName = @tagName })" class="badge">@tagName</a>
+                            <a href="@Url.Action("ShowPhotoByTag", "Photo", new { tagName = @tagName })" class="chip">@tagName</a>
                         }
                     </span>
                 </div>
