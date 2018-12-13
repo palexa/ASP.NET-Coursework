@@ -23,8 +23,8 @@
         <fieldset>
             <legend>Upload new photos:</legend>
             <form action="/photo/upload?albumName=@ViewBag.AlbumName" enctype="multipart/form-data" method="post">
-               <p> <input accept="image/*" id="Files" multiple="multiple" name="Files" type="file" /></p>
-               <p> <input id="btnUpload" type="submit" value="Upload" /> </p>
+               <p> <input class="btn btn-dark" accept="image/*" id="Files" multiple="multiple" name="Files" type="file" /></p>
+               <p> <input id="btnUpload" class="btn btn-dark" type="submit" value="Upload" /> </p>
             </form>
             </fieldset>
     </div>
@@ -37,7 +37,7 @@
             {
                 <p>Enter new album name:</p>
                 <p>@Html.TextBox("newAlbumName", "")</p>
-                <p><input type="submit" value="Rename" /></p>
+                <p><input type="submit" class="btn btn-dark" value="Rename" /></p>
             }
         </fieldset>
     </div>

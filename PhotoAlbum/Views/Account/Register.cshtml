@@ -4,43 +4,35 @@
     ViewBag.Title = "Register";
 }
 
-<h2>Регистрация</h2>
 
-@using (Html.BeginForm()) 
+@using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
-    
-    <div class="form-horizontal">
-        <hr />
-        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-        
-        <table>
-            <tr>
-                <td>@Html.LabelFor(model => model.Login, htmlAttributes: new { @class = "control-label col-md-2" })</td>
-                <td>@Html.EditorFor(model => model.Login, new { htmlAttributes = new { @class = "form-control" } })</td>
-                <td>@Html.ValidationMessageFor(model => model.Login, "", new { @class = "text-danger" })</td>
-            </tr>
-            <tr>
-                <td>@Html.LabelFor(model => model.Email, htmlAttributes: new { @class = "control-label col-md-2" })</td>
-                <td>@Html.EditorFor(model => model.Email, new { htmlAttributes = new { @class = "form-control" } })</td>
-                <td>@Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })</td>
-            </tr>
-            <tr>
-                <td>@Html.LabelFor(model => model.Password, htmlAttributes: new { @class = "control-label col-md-2" })</td>
-                <td>@Html.EditorFor(model => model.Password, new { htmlAttributes = new { @class = "form-control" } })</td>
-                <td>@Html.ValidationMessageFor(model => model.Password, "", new { @class = "text-danger" })</td>
-            </tr>
 
-            <tr>
-               <td>@Html.LabelFor(model => model.ConfirmPassword, htmlAttributes: new { @class = "control-label col-md-2" })</td>
-               <td>@Html.EditorFor(model => model.ConfirmPassword, new { htmlAttributes = new { @class = "form-control" } })</td>
-               <td>@Html.ValidationMessageFor(model => model.ConfirmPassword, "", new { @class = "text-danger" })</td>
-            </tr>
-        </table>
-
-        <div class="form-group">
-            <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Sign up" class="btn btn-dark" />
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+    <div class="row">
+        <div class="col s12">
+            <div class="card blue-grey darken-1">
+                <div class="card-content white-text">
+                    <span class="card-title">Регистрация</span>
+                    <p>
+                        @Html.LabelFor(model => model.Login, htmlAttributes: new { @class = "control-label" })
+                        @Html.EditorFor(model => model.Login, new { htmlAttributes = new { @class = "form-control", autocomplete = "off" } })
+                        @Html.ValidationMessageFor(model => model.Login, "", new { @class = "text-danger" })
+                        @Html.LabelFor(model => model.Email, htmlAttributes: new { @class = "control-label" })
+                        @Html.EditorFor(model => model.Email, new { htmlAttributes = new { @class = "form-control", autocomplete = "off" } })
+                        @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
+                        @Html.LabelFor(model => model.Password, htmlAttributes: new { @class = "control-label" })
+                        @Html.EditorFor(model => model.Password, new { htmlAttributes = new { @class = "form-control", autocomplete = "off" } })
+                        @Html.ValidationMessageFor(model => model.Password, "", new { @class = "text-danger" })
+                        @Html.LabelFor(model => model.ConfirmPassword, htmlAttributes: new { @class = "control-label" })
+                        @Html.EditorFor(model => model.ConfirmPassword, new { htmlAttributes = new { @class = "form-control", autocomplete = "off" } })
+                        @Html.ValidationMessageFor(model => model.ConfirmPassword, "", new { @class = "text-danger" })
+                    </p>
+                </div>
+                <div class="card-action">
+                    <button type="submit" class="btn btn-dark">Sign up</button>
+                </div>
             </div>
         </div>
     </div>
